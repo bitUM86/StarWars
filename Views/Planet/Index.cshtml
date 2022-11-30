@@ -1,0 +1,36 @@
+﻿@model starWarsInfo.Models.Planet
+
+ <head>
+    <title>"Planet :)"</title>
+</head>
+
+<body>
+    <h1>@ViewBag.Header</h1>
+     
+    <div>        PlanetName : @Model.Name    </div>
+    <div>        Diameter : @Model.Diameter    </div>
+    <div>        Gravity : @Model.Gravity    </div>
+    <div>        Climate : @Model.Climate    </div>
+    <div>        Created : @Model.Created    </div>
+    <div>        Edited : @Model.Edited    </div>
+    <div>        Population : @Model.Population    </div>
+    <div>        Rotation_period : @Model.Rotation_period    </div>
+    <div>        Surface_water : @Model.Surface_water    </div>
+    <div>        Terrain : @Model.Terrain    </div>
+    <div>        URL : @Model.Url    </div>
+
+     <div>
+        <h1>Residents</h1> 
+       <resident-info my-elements="Model.Residents"></resident-info>
+    </div>
+
+     <div>
+       <h1>Films </h1> 
+         <film-info my-elements="Model.Films"></film-info>
+     </div>
+
+     <form>
+        <button class="btn btn-primary" asp-action="GetPlanet" asp-controller="Planet" asp-route-id="2">Get Second Planet</button>
+    </form>
+</body>
+</html>
