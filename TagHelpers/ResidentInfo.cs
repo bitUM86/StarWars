@@ -9,7 +9,7 @@ namespace StarWarsInfo.TagHelpers
 {
     public class ResidentInfo : TagHelper
     {
-        People _resident = null;
+        Resident _resident = null;
         private readonly IHttpClientFactory _httpClientFactory;
         public List<string> myElements { get; set; } = new List<string>();
 
@@ -28,7 +28,7 @@ namespace StarWarsInfo.TagHelpers
                 var httpResponse = await httpClient.SendAsync(httpRequest);
                 if (httpResponse.IsSuccessStatusCode)
                 {
-                    _resident = await httpResponse.Content.ReadFromJsonAsync<People>();
+                    _resident = await httpResponse.Content.ReadFromJsonAsync<Resident>();
                     content = $"{content}<h4>{_resident.Name}</h4>" +
                     $"<li>{_resident.Birth_year}</li>" +
                     $"<li>{_resident.Eye_color}</li>" +

@@ -24,9 +24,9 @@ namespace starWarsInfo.Controllers
            _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<ViewResult> GetPlanet(int id = 1)
+        public async Task<ViewResult> GetPlanet(int id )
         {
-            Planet? planet   = null;
+            Planet planet   = null;
             var httpRequest  = new HttpRequestMessage(HttpMethod.Get, $"http://swapi.dev/api/planets/{id}/");
             var httpClient   = _httpClientFactory.CreateClient();
             var httpResponse = await httpClient.SendAsync(httpRequest);
@@ -38,9 +38,6 @@ namespace starWarsInfo.Controllers
             return View("Index", planet);
         }
         
-        public IActionResult GetAllPlanets()
-        {
-            return View("GetPlanets");
-        }
+       
     }
 }

@@ -48,7 +48,7 @@ namespace StarWarsInfo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Planet}/{action=GetPlanet}/{id?}");
+                    pattern: "{controller=Planet}/{action=GetPlanet}/{id=1}");
             });
         }
     }
